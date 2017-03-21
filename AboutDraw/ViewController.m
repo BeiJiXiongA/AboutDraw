@@ -12,6 +12,7 @@
 @property (nonatomic, strong) UIView *demoView1;
 @property (nonatomic, strong) CAShapeLayer *indicateLayer;
 @property (nonatomic, strong) UIBezierPath *path;
+@property (nonatomic, strong) CAGradientLayer *gradientLayer;
 @end
 
 @implementation ViewController
@@ -21,8 +22,101 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self setUpView4];
+    [self setUpView6];
+    
+    //create particle emitter layer'
+    
+    
 }
+
+
+-(void)setUpView6
+{
+    CGFloat gap = 4;
+    CGFloat alpha = 0.5;
+    CGFloat scale = 0.5;
+    _demoView1 = [[UIView alloc] init];
+    _demoView1.frame = CGRectMake((WIDTH - 150)/2, 100, 150, 150);
+    _demoView1.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:_demoView1];
+    
+    CAReplicatorLayer *layer =[CAReplicatorLayer layer];
+    layer.frame = _demoView1.bounds;
+    layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"123"].CGImage);
+    [_demoView1.layer addSublayer:layer];
+    layer.shouldRasterize = YES;
+    layer.rasterizationScale = [UIScreen mainScreen].scale;
+    layer.instanceCount = 2;
+    CATransform3D transform = CATransform3DIdentity;
+    transform = CATransform3DTranslate(transform, 0.0f, layer.bounds.size.height + gap, 0.0f);
+    transform = CATransform3DScale(transform, 1.0f, -1.0f, 0.0f);
+    layer.instanceTransform = transform;
+    layer.instanceAlphaOffset = alpha - 1.0f;
+    
+    //create gradient layer
+    if (!_gradientLayer)
+    {
+        _gradientLayer = [[CAGradientLayer alloc] init];
+        _demoView1.layer.mask = _gradientLayer;
+        _gradientLayer.colors = @[(__bridge id)[UIColor blackColor].CGColor,
+                                  (__bridge id)[UIColor blackColor].CGColor,
+                                  (__bridge id)[UIColor clearColor].CGColor];
+    }
+    
+    //update mask
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES]; // don't animate
+    CGFloat total = layer.bounds.size.height * 2.0f + gap;
+    CGFloat halfWay = (layer.bounds.size.height + gap) / total - 0.01f;
+    _gradientLayer.frame = CGRectMake(0.0f, 0.0f, _demoView1.bounds.size.width, total);
+    _gradientLayer.locations = @[@0.0f, @(halfWay), @(halfWay + (1.0f - halfWay) * scale)];
+    [CATransaction commit];
+    
+//    CAReplicatorLayer *layer = (CAReplicatorLayer *)_demoView1.layer;
+//    layer.instanceCount = 2;
+//    layer.shouldRasterize = YES;
+//    layer.rasterizationScale = [UIScreen mainScreen].scale;
+//    layer.frame = CGRectMake((WIDTH - 150)/2, 100, 150, 150);
+//    UIImage *image = [UIImage imageNamed:@"123"];
+//    layer.contents = (__bridge id _Nullable)(image.CGImage);
+//    [self.view.layer addSublayer:layer];
+//    
+//    CATransform3D transform = CATransform3DIdentity;
+//    CGFloat verticalOffset = layer.bounds.size.height + 2;
+//    transform = CATransform3DTranslate(transform, 0, verticalOffset, 0);
+//    transform = CATransform3DScale(transform, 1, -1, 0);
+//    layer.instanceTransform = transform;
+//    
+//    layer.instanceAlphaOffset = -0.6;
+//    [CATransaction begin];
+//    [CATransaction commit];
+}
+
+-(void)setUpView5
+{
+    CAEmitterLayer *emitter = [CAEmitterLayer layer];
+    emitter.frame = self.view.bounds;
+    [self.view.layer addSublayer:emitter];
+    
+    //configure emitter
+    emitter.renderMode = kCAEmitterLayerUnordered;
+    emitter.emitterPosition = CGPointMake(emitter.frame.size.width / 2.0, emitter.frame.size.height / 2.0);
+    
+    //create a particle template
+    CAEmitterCell *cell = [[CAEmitterCell alloc] init];
+    cell.contents = (__bridge id)[UIImage imageNamed:@"123"].CGImage;
+    cell.birthRate = 150;
+    cell.lifetime = 5.0;
+    cell.color = [UIColor colorWithRed:1 green:0.5 blue:0.1 alpha:1.0].CGColor;
+    cell.alphaSpeed = -0.4;
+    cell.velocity = 50;
+    cell.velocityRange = 50;
+    cell.emissionRange = M_PI * 2.0;
+    
+    //add particle template to emitter
+    emitter.emitterCells = @[cell];
+}
+
 
 -(void)setUpView4
 {

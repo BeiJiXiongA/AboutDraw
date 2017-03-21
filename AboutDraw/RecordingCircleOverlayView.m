@@ -8,6 +8,7 @@
 
 #import "RecordingCircleOverlayView.h"
 
+
 @implementation RecordingCircleOverlayView
 
 -(id)initWithFrame:(CGRect)frame

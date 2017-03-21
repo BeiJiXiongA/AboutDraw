@@ -16,6 +16,9 @@
 		E4077D241E7A396500643DF4 /* AboutDrawUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4077D231E7A396500643DF4 /* AboutDrawUITests.m */; };
 		E4077D341E7A5AA300643DF4 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E4077D331E7A5AA300643DF4 /* UIView+Extension.m */; };
 		E4077D371E7BD03B00643DF4 /* RecordingCircleOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4077D361E7BD03B00643DF4 /* RecordingCircleOverlayView.m */; };
+		E46EE63C1E80B9AD001936B4 /* 123.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E46EE63B1E80B9AD001936B4 /* 123.PNG */; };
+		E46EE63F1E80F0F3001936B4 /* ReflectView.m in Sources */ = {isa = PBXBuildFile; fileRef = E46EE63E1E80F0F3001936B4 /* ReflectView.m */; };
+		E46EE6421E80F247001936B4 /* UIView+LayerClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E46EE6411E80F247001936B4 /* UIView+LayerClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,11 @@
 		E4077D331E7A5AA300643DF4 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		E4077D351E7BD03B00643DF4 /* RecordingCircleOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingCircleOverlayView.h; sourceTree = "<group>"; };
 		E4077D361E7BD03B00643DF4 /* RecordingCircleOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingCircleOverlayView.m; sourceTree = "<group>"; };
+		E46EE63B1E80B9AD001936B4 /* 123.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.PNG; sourceTree = "<group>"; };
+		E46EE63D1E80F0F3001936B4 /* ReflectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectView.h; sourceTree = "<group>"; };
+		E46EE63E1E80F0F3001936B4 /* ReflectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectView.m; sourceTree = "<group>"; };
+		E46EE6401E80F247001936B4 /* UIView+LayerClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerClass.h"; sourceTree = "<group>"; };
+		E46EE6411E80F247001936B4 /* UIView+LayerClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerClass.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 		E4077CFD1E7A396500643DF4 /* AboutDraw */ = {
 			isa = PBXGroup;
 			children = (
+				E46EE63B1E80B9AD001936B4 /* 123.PNG */,
 				E4077D311E7A5AA300643DF4 /* Pratice.pch */,
 				E4077D321E7A5AA300643DF4 /* UIView+Extension.h */,
 				E4077D331E7A5AA300643DF4 /* UIView+Extension.m */,
@@ -119,6 +128,10 @@
 				E4077CFE1E7A396500643DF4 /* Supporting Files */,
 				E4077D351E7BD03B00643DF4 /* RecordingCircleOverlayView.h */,
 				E4077D361E7BD03B00643DF4 /* RecordingCircleOverlayView.m */,
+				E46EE63D1E80F0F3001936B4 /* ReflectView.h */,
+				E46EE63E1E80F0F3001936B4 /* ReflectView.m */,
+				E46EE6401E80F247001936B4 /* UIView+LayerClass.h */,
+				E46EE6411E80F247001936B4 /* UIView+LayerClass.m */,
 			);
 			path = AboutDraw;
 			sourceTree = "<group>";
@@ -258,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46EE63C1E80B9AD001936B4 /* 123.PNG in Resources */,
 				E4077D0E1E7A396500643DF4 /* LaunchScreen.storyboard in Resources */,
 				E4077D0B1E7A396500643DF4 /* Assets.xcassets in Resources */,
 			);
@@ -284,11 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46EE63F1E80F0F3001936B4 /* ReflectView.m in Sources */,
 				E4077D061E7A396500643DF4 /* ViewController.m in Sources */,
 				E4077D031E7A396500643DF4 /* AppDelegate.m in Sources */,
 				E4077D341E7A5AA300643DF4 /* UIView+Extension.m in Sources */,
 				E4077D001E7A396500643DF4 /* main.m in Sources */,
 				E4077D371E7BD03B00643DF4 /* RecordingCircleOverlayView.m in Sources */,
+				E46EE6421E80F247001936B4 /* UIView+LayerClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
