@@ -22,9 +22,51 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self setUpView6];
+    
+    [self setUpView4];
+    
+    //aaaaaaaaa
     
     //create particle emitter layer'
+    
+}
+
+-(void)setUpView7
+{
+    _demoView1 = [[UIView alloc] init];
+    _demoView1.frame = CGRectMake((WIDTH - 150)/2, 100, 150, 150);
+    _demoView1.backgroundColor = [UIColor whiteColor];
+    _demoView1.layer.borderWidth = 15;
+    _demoView1.layer.borderColor = [UIColor blackColor].CGColor;
+    [self.view addSubview:_demoView1];
+    
+    CAKeyframeAnimation* widthAnim = [CAKeyframeAnimation  animationWithKeyPath:@"scale"];
+    
+    NSArray* widthValues = [NSArray arrayWithObjects:@10.0, @20.0, @30.0, @40.0, @50,@60.0, @70.0, @80.0, @90.0, nil];
+    
+    widthAnim.values = widthValues;
+    
+    widthAnim.calculationMode = kCAAnimationPaced;
+    
+    // Animation 2
+    
+//    CAKeyframeAnimation* colorAnim = [CAKeyframeAnimation animationWithKeyPath:@"borderColor"];
+//    
+//    NSArray*colorValues=[NSArray arrayWithObjects:(id)[UIColor greenColor].CGColor,(id)[UIColor redColor].CGColor,(id)[UIColor blueColor].CGColor, nil];
+//    
+//    colorAnim.values = colorValues;
+//    
+//    colorAnim.calculationMode = kCAAnimationCubic;
+    
+    // Animation group
+    
+    CAAnimationGroup* group = [CAAnimationGroup animation];
+    
+    group.animations = [NSArray arrayWithObjects:widthAnim, nil];
+    
+    group.duration = 5.0;
+    
+    [_demoView1.layer addAnimation:group forKey:@"BorderChanges"];
     
     
 }
@@ -128,7 +170,7 @@
     CGPoint centerPoint = CGPointMake(_demoView1.width/2, _demoView1.height/2);
     CGFloat redius = _demoView1.height/2;
     
-    self.path = [UIBezierPath bezierPathWithArcCenter:centerPoint radius:redius startAngle:M_PI endAngle:-M_PI clockwise:NO];
+    self.path = [UIBezierPath bezierPathWithArcCenter:centerPoint radius:redius startAngle:0 endAngle:0 clockwise:NO];
     
     _indicateLayer = [CAShapeLayer layer];
     _indicateLayer.path = self.path.CGPath;
@@ -137,13 +179,27 @@
     _indicateLayer.lineWidth = 4;
     [_demoView1.layer addSublayer:_indicateLayer];
     
+    UISlider *slider = [[UISlider alloc] init];
+    slider.frame = CGRectMake((WIDTH - 200)/2, _demoView1.bottom + 30, 200, 40);
+    slider.maximumValue = 1.0;
+    slider.minimumValue = 0.0;
+    [self.view addSubview:slider];
+    
+    [slider addTarget:self action:@selector(sliderChange1:) forControlEvents:UIControlEventValueChanged];
 }
 
+-(void)sliderChange1:(UISlider *)slider
+{
+    self.path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(_demoView1.width/2, _demoView1.height/2) radius:_demoView1.height/2 startAngle:0.1 endAngle:1*M_PI*slider.value clockwise:NO];
+    _indicateLayer.path = self.path.CGPath;
+}
+
+#pragma mark - 会动的圈
 -(void)setUpView3
 {
     _demoView1 = [[UIView alloc] init];
     _demoView1.frame = CGRectMake((WIDTH - 150)/2, 100, 150, 150);
-    _demoView1.backgroundColor = [UIColor yellowColor];
+    _demoView1.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_demoView1];
     
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
@@ -167,6 +223,7 @@
     [shapeLayer addAnimation:pathAnima forKey:@"strokeEndAnimation"];
 }
 
+#pragma mark - 杯子进度
 -(void)setUpView2
 {
     _demoView1 = [[UIView alloc] init];

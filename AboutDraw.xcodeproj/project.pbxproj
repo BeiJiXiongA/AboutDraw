@@ -16,9 +16,11 @@
 		E4077D241E7A396500643DF4 /* AboutDrawUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4077D231E7A396500643DF4 /* AboutDrawUITests.m */; };
 		E4077D341E7A5AA300643DF4 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E4077D331E7A5AA300643DF4 /* UIView+Extension.m */; };
 		E4077D371E7BD03B00643DF4 /* RecordingCircleOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4077D361E7BD03B00643DF4 /* RecordingCircleOverlayView.m */; };
+		E46832A51EA5EDCE0043B0D5 /* HoleView.m in Sources */ = {isa = PBXBuildFile; fileRef = E46832A41EA5EDCE0043B0D5 /* HoleView.m */; };
 		E46EE63C1E80B9AD001936B4 /* 123.PNG in Resources */ = {isa = PBXBuildFile; fileRef = E46EE63B1E80B9AD001936B4 /* 123.PNG */; };
 		E46EE63F1E80F0F3001936B4 /* ReflectView.m in Sources */ = {isa = PBXBuildFile; fileRef = E46EE63E1E80F0F3001936B4 /* ReflectView.m */; };
 		E46EE6421E80F247001936B4 /* UIView+LayerClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E46EE6411E80F247001936B4 /* UIView+LayerClass.m */; };
+		E4C001D31F0A9F1A00031A9A /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C001D21F0A9F1A00031A9A /* ProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,11 +61,15 @@
 		E4077D331E7A5AA300643DF4 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		E4077D351E7BD03B00643DF4 /* RecordingCircleOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingCircleOverlayView.h; sourceTree = "<group>"; };
 		E4077D361E7BD03B00643DF4 /* RecordingCircleOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingCircleOverlayView.m; sourceTree = "<group>"; };
+		E46832A31EA5EDCE0043B0D5 /* HoleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoleView.h; sourceTree = "<group>"; };
+		E46832A41EA5EDCE0043B0D5 /* HoleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoleView.m; sourceTree = "<group>"; };
 		E46EE63B1E80B9AD001936B4 /* 123.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.PNG; sourceTree = "<group>"; };
 		E46EE63D1E80F0F3001936B4 /* ReflectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectView.h; sourceTree = "<group>"; };
 		E46EE63E1E80F0F3001936B4 /* ReflectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectView.m; sourceTree = "<group>"; };
 		E46EE6401E80F247001936B4 /* UIView+LayerClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerClass.h"; sourceTree = "<group>"; };
 		E46EE6411E80F247001936B4 /* UIView+LayerClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerClass.m"; sourceTree = "<group>"; };
+		E4C001D11F0A9F1A00031A9A /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		E4C001D21F0A9F1A00031A9A /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,10 @@
 				E46EE63E1E80F0F3001936B4 /* ReflectView.m */,
 				E46EE6401E80F247001936B4 /* UIView+LayerClass.h */,
 				E46EE6411E80F247001936B4 /* UIView+LayerClass.m */,
+				E46832A31EA5EDCE0043B0D5 /* HoleView.h */,
+				E46832A41EA5EDCE0043B0D5 /* HoleView.m */,
+				E4C001D11F0A9F1A00031A9A /* ProgressView.h */,
+				E4C001D21F0A9F1A00031A9A /* ProgressView.m */,
 			);
 			path = AboutDraw;
 			sourceTree = "<group>";
@@ -298,7 +308,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46832A51EA5EDCE0043B0D5 /* HoleView.m in Sources */,
 				E46EE63F1E80F0F3001936B4 /* ReflectView.m in Sources */,
+				E4C001D31F0A9F1A00031A9A /* ProgressView.m in Sources */,
 				E4077D061E7A396500643DF4 /* ViewController.m in Sources */,
 				E4077D031E7A396500643DF4 /* AppDelegate.m in Sources */,
 				E4077D341E7A5AA300643DF4 /* UIView+Extension.m in Sources */,
