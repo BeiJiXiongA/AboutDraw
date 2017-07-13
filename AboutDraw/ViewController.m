@@ -24,6 +24,8 @@
     
     [self setUpView6];
     
+    //bbbbbbb
+    
     //create particle emitter layer'
     
     
