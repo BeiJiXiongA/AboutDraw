@@ -31,7 +31,6 @@
     
     //ddddddddd
     
-    //ccccccc
     
     //create particle emitter layer'
     
